@@ -1,0 +1,32 @@
+form {
+    margin: 250px 0 auto;
+}
+
+form h4{
+    font-weight: bold;
+}
+
+form .react-floating-label-input .container{
+    border-bottom: none;
+    height: 0;
+    padding: 0;
+    width: 100%;
+}
+
+form .react-floating-label-input .container input{
+    font-size: 3em;
+    text-align: center;
+}
+
+form .react-floating-label-input .container input:focus{
+    border-bottom: 1px solid #000;
+    width: 50%;
+    margin: 0 auto;
+}
+
+form .react-floating-label-input .container label{
+    color: #000;
+    font-size: 4rem;
+    width: 99%;
+    transform-origin: top center;
+}
