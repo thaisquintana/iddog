@@ -1,20 +1,18 @@
 import axios from 'axios';
 
-export const setAuthUserData = () => ({
-  return (dispatch) {
-    return axios.post('https://api-iddog.idwall.co/signup').then((response) => {
-      dispatch(receiveData(response.data))
+export const setAuthUserData = email => dispatch => (
+  axios
+    .post('https://api-iddog.idwall.co/signup', {
+      email,
     })
-  }
-});
-
-export const receiveData = data => ({
-  type: 'RECEIVE_DATA',
-  payload: {
-    email: data.email,
-    token: data.token,
-  }
-});
+    .then(response => dispatch({
+      type: 'USER_SET_DATA',
+      payload: {
+        email: response.data.user.email,
+        token: response.data.user.token,
+      },
+    }))
+);
 
 export const unsetUserData = () => ({
   type: 'USER_UNSET_DATA',

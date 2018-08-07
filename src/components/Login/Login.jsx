@@ -1,9 +1,7 @@
 import React from 'react';
-import * as actionCreators from '../../actions/UserActions';
-import { setAuthUserData } from '../../actions/UserActions';
-import { connect } from 'react-redux';
 import { FormGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
+import { Route, Redirect } from 'react-router';
 
 import './Login.css';
 
@@ -21,7 +19,7 @@ class Login extends React.Component {
         e.preventDefault();
         const { inputEmail }  = this.state;
         this.setState({ inputEmail });
-        console.log(this.state.inputEmail)
+        this.props.login(inputEmail);
     }
 
     onChange(e) {
@@ -30,7 +28,10 @@ class Login extends React.Component {
 
     render() {
       const { inputEmail } = this.state;
-        
+      const { token } = this.props;
+      if (token) {
+        return <Redirect to='/feed' />
+      }        
       return (
         <form onSubmit={this.onSubmit}>
             <FormGroup>
@@ -51,9 +52,4 @@ class Login extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return state
-};
-
-export default connect ( mapStateToProps, actionCreators )(Login);
-  
+export default Login;

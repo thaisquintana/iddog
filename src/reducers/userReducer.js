@@ -5,7 +5,7 @@ const initialState = {
   
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'RECEIVE_DATA':
+    case 'USER_SET_DATA':
       return { ...action.payload };
     case 'ALL_PHOTOS':
     return { ...action.payload };
