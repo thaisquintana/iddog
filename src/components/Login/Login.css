@@ -2,31 +2,78 @@ form {
     margin: 300px 0 auto;
 }
 
-form h4{
+form h4 {
     font-weight: bold;
 }
 
-form .react-floating-label-input .container{
+form .container {
     border-bottom: none;
     height: 0;
     padding: 0;
     width: 100%;
 }
 
-form .react-floating-label-input .container input{
+form .container .form-control:focus {
+    box-shadow: none;
+}
+
+form .container .form-control {
+    border-radius: 0;
+}
+
+form .container label, input {
+    transition: all 0.2s;
+}
+
+form .container input {
     font-size: 3em;
     text-align: center;
-}
-
-form .react-floating-label-input .container input:focus{
-    border-bottom: 1px solid #000;
     width: 50%;
     margin: 0 auto;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    position: relative;
+    top: 93px;
+    padding: 25px;
 }
 
-form .react-floating-label-input .container label{
-    color: #000;
+form .container input:focus {
+    outline: 0;
+    border-bottom: 1px solid #000;
+}
+
+form .container input:placeholder-shown + label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: center;
+    z-index: -2;
     font-size: 4rem;
-    width: 99%;
-    transform-origin: top center;
+    position: relative;
+    transform: translate(0, 40px) scale(1.5);
+}
+
+::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+}
+
+form .container input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+form .container input:not(:placeholder-shown) + label,
+form .container input:focus + label {
+    transform: translate(0, -100px);
+    cursor: text;
+    z-index: 1;
+    color: #000;
+    padding-top: 20px;
+    cursor: text;
+    margin-bottom: 0;
+    font-size: 4rem;
+    background-color:transparent;
 }

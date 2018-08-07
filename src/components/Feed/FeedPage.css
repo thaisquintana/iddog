@@ -1,0 +1,26 @@
+.category-list h1{
+    margin: 100px 0px 50px 0px;
+}
+
+.category-list ul{
+    list-style:none;
+    padding-left: 0;
+}
+
+.category-list ul li{
+    display: inline-block;
+    padding: 18px;
+    border-right: 1px solid #eee;
+    line-height: 0;
+}
+
+.category-list ul li:last-child{
+    border-right: none;
+}
+
+.category-list ul li a{
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #928282;
+    font-weight: lighter;
+}
