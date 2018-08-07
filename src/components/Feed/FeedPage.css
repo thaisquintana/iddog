@@ -24,3 +24,15 @@
     color: #928282;
     font-weight: lighter;
 }
+
+.photo-list ul{
+    list-style:none;
+    padding-left: 0;
+}
+
+.photo-list ul li{
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    background-color: slategray;
+}

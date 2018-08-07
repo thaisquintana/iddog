@@ -1,26 +1,19 @@
+import axios from 'axios';
+
 export const setAuthUserData = () => ({
-  return () {
-    fetch("https://api-iddog.idwall.co/signup", {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: '',
-        token: ''
-    }),
+  return (dispatch) {
+    return axios.post('https://api-iddog.idwall.co/signup').then((response) => {
+      dispatch(receiveData(response.data))
     })
-    // .then(response => response.json(setUserData))
-    // .catch();
-  },      
+  }
 });
 
-export const setUserData = user => ({
-  type: 'USER_SET_DATA',
+export const receiveData = data => ({
+  type: 'RECEIVE_DATA',
   payload: {
-    email: user.email,
-    token: user.data.token
-  },
+    email: data.email,
+    token: data.token,
+  }
 });
 
 export const unsetUserData = () => ({

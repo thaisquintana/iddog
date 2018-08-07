@@ -34,7 +34,7 @@ form .container input {
     box-shadow: none;
     background-color: transparent;
     position: relative;
-    top: 93px;
+    top: -47px;
     padding: 25px;
 }
 
@@ -53,7 +53,7 @@ form .container input:placeholder-shown + label {
     z-index: -2;
     font-size: 4rem;
     position: relative;
-    transform: translate(0, 40px) scale(1.5);
+    transform: translate(0, -100px) scale(1.5);
 }
 
 ::-webkit-input-placeholder {
@@ -67,7 +67,7 @@ form .container input:focus::-webkit-input-placeholder {
 
 form .container input:not(:placeholder-shown) + label,
 form .container input:focus + label {
-    transform: translate(0, -100px);
+    transform: translate(0, -250px);
     cursor: text;
     z-index: 1;
     color: #000;

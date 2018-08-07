@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import CategoryList from '../CategoryList/CategoryList';
 
 import '../Feed/FeedPage.css';
 
@@ -21,6 +22,13 @@ class FeedPage extends React.Component {
                         </li>
                         <li>
                             <Link to='/feed/Pug'> Pug </Link>
+                        </li>
+                    </ul>
+                </div>
+                <div className="photo-list">
+                    <ul>
+                        <li>
+                            <CategoryList />
                         </li>
                     </ul>
                 </div>

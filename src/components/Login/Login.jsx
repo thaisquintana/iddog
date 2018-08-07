@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import * as actionCreators from '../../actions/UserActions';
 import { setAuthUserData } from '../../actions/UserActions';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FormGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
-import { ControlLabel } from 'react-bootstrap';
-import FloatingLabelInput from 'react-floating-label-input';
-import 'react-floating-label-input/dist/react-floating-label-input.css';
 
 import './Login.css';
 
 class Login extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             inputEmail: '',
         }
-
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
     }
@@ -55,21 +51,9 @@ class Login extends React.Component {
     }
 }
 
-  Login.defaultProps = {
-    inputEmail: '',
-};
-
-Login.propTypes = {
-    inputEmail: PropTypes.string.isRequired,
-};
-
 const mapStateToProps = state => {
-    return
-  };
-  
-const mapDispatchToProps = dispatch => {
-    setAuthUserData: () => dispatch({type: 'USER_SET_DATA'})
+    return state
 };
 
-export default connect ( mapStateToProps, mapDispatchToProps )(Login);
+export default connect ( mapStateToProps, actionCreators )(Login);
   
