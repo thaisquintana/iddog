@@ -1,36 +1,33 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import CategoryList from '../CategoryList/CategoryList';
+import { Link } from 'react-router-dom';
+import PhotoList from '../PhotoList/PhotoList';
+import BrandCategory from '../BrandCategory/BrandCategory';
 
 import '../Feed/FeedPage.css';
 
 class FeedPage extends React.Component {
+    componentDidMount() {
+        const { token } = this.props;
+        this.props.listCategories(token);
+    }
+
     render() {
+        const { list, listCategories, puppy } = this.props;
+        const imageList = list.map( list => {
+            return(
+                <li>{list}</li>
+            )
+        })
         return(
             <div className="category-list">
                 <h1>Feed</h1>
                 <div>
-                    <ul>
-                        <li>
-                            <Link to='/feed/Husky'> Husky </Link>
-                        </li>
-                        <li>
-                            <Link to='/feed/Labrador'> Labrador </Link>
-                        </li>
-                        <li>
-                            <Link to='/feed/Hound'> Hound </Link>
-                        </li>
-                        <li>
-                            <Link to='/feed/Pug'> Pug </Link>
-                        </li>
-                    </ul>
+                   <BrandCategory />
                 </div>
                 <div className="photo-list">
-                    <ul>
-                        <li>
-                            <CategoryList />
-                        </li>
-                    </ul>
+                   <ul>
+                       {imageList}
+                   </ul> 
                 </div>
             </div>
         );
