@@ -1,6 +1,7 @@
 # IDDOG 
 
 To start the project, first you need to install node and npm on your local machine
+The project was created with create-react-app
 
 > Prerequisites
 ```
@@ -13,12 +14,12 @@ node -v -> 6.11.4
 
 serve will use, with hot reload at localhost:3000
 ```
-First remenber to do npm install, then you can run with npm start
+run using npm start
 ```
 
 #
 
-> To Build and Deploy, the Project on localhost
+> To Build and Deploy
 ```
 npm run build
 ```
