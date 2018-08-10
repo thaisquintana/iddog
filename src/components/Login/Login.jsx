@@ -1,6 +1,5 @@
 import React from 'react';
-import { FormGroup } from 'react-bootstrap';
-import { FormControl } from 'react-bootstrap';
+import { FormGroup, FormControl } from 'react-bootstrap';
 import { Route, Redirect } from 'react-router';
 
 import './Login.css';

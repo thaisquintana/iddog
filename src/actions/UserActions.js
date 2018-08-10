@@ -5,13 +5,15 @@ export const setAuthUserData = email => dispatch => (
     .post('https://api-iddog.idwall.co/signup', {
       email,
     })
-    .then(response => dispatch({
-      type: 'USER_SET_DATA',
-      payload: {
-        email: response.data.user.email,
-        token: response.data.user.token,
-      },
-    }))
+    .then((response) => {
+      sessionStorage.setItem('token', response.data.user.token);
+      return dispatch({
+        type: 'USER_SET_DATA',
+        payload: {
+          token: response.data.user.token,
+        },
+      });
+    })
 );
 
 export const unsetUserData = () => ({

@@ -1,6 +1,5 @@
 const initialState = {
-    email: null,
-    token: null,
+    token: sessionStorage.getItem('token'),
   };
   
 export default (state = initialState, action) => {
