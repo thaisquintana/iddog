@@ -5,8 +5,8 @@ The project was created with create-react-app
 
 > Prerequisites
 ```
-npm -v -> 5.7.1
-node -v -> 6.11.4
+npm -v -> ^5.7.1
+node -v -> ^6.11.4
 ```
 #
 
