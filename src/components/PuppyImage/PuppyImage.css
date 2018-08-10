@@ -1,0 +1,38 @@
+.puppy-frame {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.puppy-frame .puppy-photo {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 200px;
+    min-height: 200px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.modal-backdrop .in {
+    opacity: 0.8;
+}
+
+.modal-dialog .modal-content {
+    top: 300px;
+}
+
+.modal-dialog .modal-body {
+    padding: 3px;
+    background-color: rgba(53, 53, 53, 0.341);
+    border-radius: 3px;
+}
+
+.modal-dialog .modal-body .puppy-photo {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
