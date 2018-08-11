@@ -1,5 +1,5 @@
 const initialState = {
-  category: 'husky',
+  category: null,
   list: [],
 };
 

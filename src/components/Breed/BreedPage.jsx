@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 
 import './BreedPage.css';
 
-class Login extends React.Component {
+class BreedPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      active: 'husky',
-    };
     this.choosedCategory = this.choosedCategory.bind(this);
   }
 
@@ -17,37 +14,32 @@ class Login extends React.Component {
     const { token, setBreedCategory, history } = this.props;
     history.push(history.location.pathname);
     setBreedCategory(token, category);
-    const activated = e.target.id
-    if (this.active === activated) {
-      this.setState({ active: '' });
-    } else {
-      this.setState({ active: activated });
-    }
   }
 
   render() {
+    const { category } = this.props;
     return (
       <div className="category-list">
         <ul>
           <li>
-            <a href="#" className={this.state.active === 'husky' ? 'active' : ''} id="husky" onClick={e => this.choosedCategory(e, 'husky')}>
+            <button type="button" className={category === 'husky' ? 'active' : ''} onClick={e => this.choosedCategory(e, 'husky')}>
               Husky
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" className={this.state.active === 'labrador' ? 'active' : ''} id="labrador" onClick={e => this.choosedCategory(e, 'labrador')}>
+            <button type="button" className={category === 'labrador' ? 'active' : ''} onClick={e => this.choosedCategory(e, 'labrador')}>
               Labrador
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" className={this.state.active === 'hound' ? 'active' : ''} id="hound" onClick={e => this.choosedCategory(e, 'hound')}>
+            <button type="button" className={category === 'hound' ? 'active' : ''} onClick={e => this.choosedCategory(e, 'hound')}>
               Hound
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" className={this.state.active === 'pug' ? 'active' : ''} id="pug" onClick={e => this.choosedCategory(e, 'pug')}>
+            <button type="button" className={category === 'pug' ? 'active' : ''} onClick={e => this.choosedCategory(e, 'pug')}>
               Pug
-            </a>
+            </button>
           </li>
         </ul>
       </div>
@@ -55,4 +47,15 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+BreedPage.defaultProps = {
+  category: 'husky',
+};
+
+BreedPage.propTypes = {
+  setBreedCategory: PropTypes.func.isRequired,
+  token: PropTypes.string.isRequired,
+  category: PropTypes.string,
+  history: PropTypes.object.isRequired,
+};
+
+export default BreedPage;

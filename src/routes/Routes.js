@@ -9,7 +9,7 @@ import NotFound from '../components/NotFound/NotFound';
 export default () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact={true} component={Login} />
+      <Route path="/" exact component={Login} />
       <PrivateRoute path="/feed" component={FeedPage} />
       <PrivateRoute path="*" component={NotFound} />
     </Switch>

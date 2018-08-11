@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormGroup, FormControl } from 'react-bootstrap';
-import { Route, Redirect } from 'react-router';
+import { Redirect } from 'react-router';
 
 import './Login.css';
 
@@ -17,8 +18,9 @@ class Login extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     const { inputEmail } = this.state;
+    const { login } = this.props;
     this.setState({ inputEmail });
-    this.props.login(inputEmail);
+    login(inputEmail);
   }
 
   onChange(e) {
@@ -26,7 +28,6 @@ class Login extends React.Component {
   }
 
   render() {
-    const { inputEmail } = this.state;
     const { token } = this.props;
     if (token) {
       return <Redirect to="/feed" />;
@@ -52,5 +53,15 @@ class Login extends React.Component {
     );
   }
 }
+
+Login.defaultProps = {
+  login: '',
+  token: '',
+};
+
+Login.propTypes = {
+  token: PropTypes.string,
+  login: PropTypes.func,
+};
 
 export default Login;

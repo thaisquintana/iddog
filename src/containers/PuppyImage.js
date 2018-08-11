@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { setFeedList } from '../actions/FeedActions';
 import PuppyImage from '../components/PuppyImage/PuppyImage';
 
 const mapStateToProps = (state, { history }) => ({

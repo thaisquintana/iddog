@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 
 import './PuppyImage.css';
@@ -11,11 +12,13 @@ class PuppyImage extends React.Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false,
+      show: props.isSelected,
     };
   }
 
   handleClose() {
+    const { history } = this.props;
+    history.push(`${history.location.pathname}`);
     this.setState({ show: false });
   }
 
@@ -27,13 +30,14 @@ class PuppyImage extends React.Component {
 
   render() {
     const { dogUrl } = this.props;
+    const { show } = this.state;
     const idDogImage = {
       backgroundImage: `url(${dogUrl})`,
     };
     return (
       <div className="puppy-frame">
         <div className="puppy-photo" style={idDogImage} onClick={this.handleShow} />
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal show={show} onHide={this.handleClose}>
           <Modal.Body>
             <div className="puppy-photo" style={idDogImage} />
           </Modal.Body>
@@ -42,5 +46,13 @@ class PuppyImage extends React.Component {
     );
   }
 }
+
+PuppyImage.propTypes = {
+  dogUrl: PropTypes.string.isRequired,
+  isSelected: PropTypes.bool.isRequired,
+  history: PropTypes.object.isRequired,
+  category: PropTypes.string.isRequired,
+  dogId: PropTypes.string.isRequired,
+};
 
 export default PuppyImage;

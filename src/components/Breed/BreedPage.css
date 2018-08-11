@@ -1,3 +1,17 @@
+.category-list button {
+    background-color: #fff;
+    border: none;
+    color: #999;
+    font-size: 1.8rem;
+    font-weight: lighter;
+    padding: 0;
+}
+
+.category-list button:focus {
+    border: 1px solid transparent;
+    outline: none;
+}
+
 .category-list .active {
-    font-weight: 700;
+    font-weight: bolder;
 }

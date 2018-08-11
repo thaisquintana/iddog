@@ -6,7 +6,7 @@ const mapStateToProps = (state, { location }) => {
   const params = new URLSearchParams(location.search);
   return {
     token: state.user.token,
-    category: state.feed.category,
+    category: state.feed.category || params.get('category') || 'husky',
     selectedId: params.get('id'),
     list: state.feed.list,
   };
