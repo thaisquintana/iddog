@@ -9,7 +9,12 @@ export const setFeedList = (token, category) => dispatch => (
       type: 'ALL_PHOTOS',
       payload: {
         category: response.data.category,
-        list: response.data.list,
+        list: response.data.list.map((imageUrl) => ({
+          id: imageUrl
+            .replace(/^.*_/, '') // remove everything until '_'
+            .replace(/\..*$/, ''), // remove image extension,
+          imageUrl, 
+        })),
       },
     }))
 );

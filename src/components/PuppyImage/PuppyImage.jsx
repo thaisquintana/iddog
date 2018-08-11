@@ -16,12 +16,15 @@ class PuppyImage extends React.Component {
     }
     
     handleClose() {
-    this.setState({ show: false });
+        this.setState({ show: false });
     }
 
     handleShow() {
-    this.setState({ show: true });
+        const { history, category, dogId } = this.props;
+        history.push(`${history.location.pathname}?category=${category}&id=${dogId}`);
+        this.setState({ show: true });
     }
+
     render() {
         const { dogUrl } = this.props;
         const idDogImage = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PuppyImage from '../PuppyImage/PuppyImage';
-import BreedPage from '../Breed/BreedPage';
+import BreedPage from '../../containers/BreedPage';
+import PuppyImage from '../../containers/PuppyImage';
 
 import '../Feed/FeedPage.css';
 
@@ -12,14 +12,8 @@ class FeedPage extends React.Component {
     }
 
     render() {
-        const { list, category} = this.props;
-
-        // const categoryBreed = category.filter((breed) => {
-        //     if (category === 'husky' 
-        //         || (category === 'labrador' && !breed)){
-        //        return true;
-        //     }
-        // });
+        const { list, category, selectedId} = this.props;
+        console.log(selectedId);
         return(
             <div className="category-list">
                 <h1>Feed</h1>
@@ -30,7 +24,7 @@ class FeedPage extends React.Component {
                    <ul>
                        {list.length > 0 && list.map((dogImage) => {
                             return (
-                                <li key={dogImage}><PuppyImage dogUrl={dogImage} /></li>
+                                <li key={dogImage.id}><PuppyImage dogUrl={dogImage.imageUrl} dogId={dogImage.id}/></li>
                             );
                        })}
                    </ul> 
