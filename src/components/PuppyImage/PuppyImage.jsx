@@ -16,7 +16,9 @@ class PuppyImage extends React.Component {
     }
     
     handleClose() {
+        const { location, category, dogId } = this.props;
         this.setState({ show: false });
+        this.context.router.transitionTo(`${location.pathname}?category=${category}&id=${dogId}`);
     }
 
     handleShow() {
@@ -24,7 +26,7 @@ class PuppyImage extends React.Component {
         history.push(`${history.location.pathname}?category=${category}&id=${dogId}`);
         this.setState({ show: true });
     }
-
+  
     render() {
         const { dogUrl } = this.props;
         const idDogImage = {
@@ -38,6 +40,7 @@ class PuppyImage extends React.Component {
                         <div className="puppy-photo" style={idDogImage}></div>
                     </Modal.Body>
                 </Modal>
+                {/* <OriginalPuppy onHide={this.handleClose}/> */}
             </div>
         );
     }
