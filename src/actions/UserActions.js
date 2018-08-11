@@ -19,4 +19,3 @@ export const setAuthUserData = email => dispatch => (
 export const unsetUserData = () => ({
   type: 'USER_UNSET_DATA',
 });
-

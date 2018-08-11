@@ -1,18 +1,18 @@
 .category-list h1{
-    margin: 100px 0px 50px 0px;
+    margin: 100px 0 50px 0;
 }
 
 .category-list ul{
     list-style:none;
-    padding-left: 0;
     margin-bottom: 40px;
+    padding-left: 0;
 }
 
 .category-list ul li{
-    display: inline-block;
-    padding: 18px;
     border-right: 1px solid #eee;
+    display: inline-block;
     line-height: 0;
+    padding: 18px;
 }
 
 .category-list ul li:last-child{
@@ -20,19 +20,19 @@
 }
 
 .category-list ul li a{
-    font-size: 1.8rem;
-    text-decoration: none;
     color: #928282;
+    font-size: 1.8rem;
     font-weight: lighter;
+    text-decoration: none;
 }
 
-.photo-list ul{
+.category-list .photo-list ul{
     list-style:none;
     padding-left: 0;
 }
 
-.photo-list ul li {
-    display: inline-block;
+.category-list .photo-list ul li {
     border: none;
+    display: inline-block;
     padding: 3px;
 }

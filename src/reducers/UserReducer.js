@@ -1,7 +1,7 @@
 const initialState = {
-    token: sessionStorage.getItem('token'),
-  };
-  
+  token: sessionStorage.getItem('token'),
+};
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'USER_SET_DATA':
@@ -11,4 +11,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-}
+};

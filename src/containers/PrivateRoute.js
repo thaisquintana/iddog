@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
 import PrivateRoute from '../routes/PrivateRoute';
 
-const mapStateToProps = state => {
-    return {
-        token: state.user.token,
-    }
-};
+const mapStateToProps = state => ({
+  token: state.user.token,
+});
 
-export default connect ( mapStateToProps, {} )(PrivateRoute);
+export default connect(mapStateToProps, {})(PrivateRoute);
