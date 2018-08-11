@@ -16,9 +16,7 @@ class PuppyImage extends React.Component {
     }
     
     handleClose() {
-        const { location, category, dogId } = this.props;
         this.setState({ show: false });
-        this.context.router.transitionTo(`${location.pathname}?category=${category}&id=${dogId}`);
     }
 
     handleShow() {
@@ -40,7 +38,6 @@ class PuppyImage extends React.Component {
                         <div className="puppy-photo" style={idDogImage}></div>
                     </Modal.Body>
                 </Modal>
-                {/* <OriginalPuppy onHide={this.handleClose}/> */}
             </div>
         );
     }
